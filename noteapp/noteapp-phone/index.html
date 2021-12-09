@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+
+:root {
+    --note-box-color: #9AE66E;
+}
+
+body {
+    background: #E6CCA9;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    visibility: hidden;
+}
+
+.first-header {
+    height: 150px;
+}
+
+h1 {
+    font-family: 'Yuji Boku', serif;
+    text-align: center;
+}
+
+.add-note-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FF6D6D;
+    border: navajowhite;
+    font-size: 18px;
+    font-family: monospace;
+    border-radius: 3px;
+    color: #fff;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.button-event-box {
+    width: 270px;
+    height: 400px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    border-radius: 3px;
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h3 {
+    display: inline;
+    font-size: 30px;
+    font-family: 'Lobster', cursive;
+    line-height: 40px;
+    position: relative;
+    left: 2%
+}
+
+.close-box {
+    font-family: Helvetica;
+    font-weight: 400px;
+    float: right;
+    font-size: 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.add-title {
+    width: 240px;
+    height: 20px;
+    background: transparent;
+    font-size: 20px;
+    margin: 15px;
+    resize: none;
+    line-height: 25px;
+    margin-top: 40px;
+    border: none;
+    font-family: 'Roboto Slab', serif;
+    text-transform: capitalize;
+}
+
+.add-title::-webkit-scrollbar {
+    display: none;
+}
+
+.add-title, .add-text:focus {
+    outline: none;
+    border: none;
+}
+
+.add-text {
+    width: 240px;
+    height: 150px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    margin: 15px;
+    resize: none;
+    font-family: 'Inconsolata', monospace;
+}
+
+.add-text::-webkit-scrollbar {
+    display: none;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.add-note-button-box {
+    width: 90px;
+    height: 25px;
+    margin-left: 90px;
+    margin-top: 25px;
+    cursor: pointer;
+    background-color: #FF6D6D;
+    color: #fff;
+    border: navajowhite;
+    border-radius: 3px;
+}
+
+.note-box {
+    width: 230px;
+    height: 230px;
+    background-color: var(--note-box-color);
+    border-radius: 2px;
+    margin: 15px
+}
+
+.note-box-main-header {
+    display: flex;
+}
+
+.note-box-header {
+    text-transform: capitalize;
+    font-size: 18px;
+    font-family: 'M PLUS 1', sans-serif;
+    flex: 1;
+    margin: 7px;
+}
+
+.fas {
+    margin: 14px;
+    text-align: right;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+}
+
+.note-box-text {
+    margin: 9px;
+    line-height: 22px;
+    font-family: 'Prompt', sans-serif;
+    text-align: justify;
+    word-break: break-all;
+    max-width: 200px;
+}
+     </style>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+
+    <header class="first-header">
+        <h1>Note App</h1>
+        <input type="button" value="Add Note" class="add-note-button">
+    </header>
+
+    <div class="button-event-box">
+        <header>
+            <h3>Add a note..</h3>
+            <div class="close-box">X</div>
+        </header>
+        <textarea class="add-title" placeholder="Add title.." maxlength="16"></textarea>
+        <textarea class="add-text" placeholder="Add text" maxlength="130"></textarea>
+        <input type="button" value="Add Note" class="add-note-button-box">
+    </div>
+
+    <main>
+        <!-- <div class="note-box">
+            <header class="note-box-main-header">
+                <div class="note-box-header">Title</div>
+                <i class="fas fa-trash-alt"></i>
+            </header>
+            <div class="note-box-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium tempora libero sapiente deserunt perspiciatis ex, eaque illo consequuntur, dolore cupidita</div>
+        </div> -->
+    </main>
+    
+    <script>
+        const addNoteButton = document.querySelector('.add-note-button');
+const addNoteArea = document.querySelector('.button-event-box');
+const closeBox = document.querySelector('.close-box');
+const addNoteButtonInBox = document.querySelector('.add-note-button-box');
+
+addNoteButton.addEventListener('click', addTaskButtonEvent = () => {
+
+    addNoteArea.style.display = 'block';
+
+    closeBox.addEventListener('click', closeBoxEvent = () => {
+
+        addNoteArea.style.display = 'none';
+    });
+
+    addNoteButtonInBox.addEventListener('click', () => {
+
+        closeBoxEvent();
+    });
+});
+
+const addTitleBox = document.querySelector('.add-title');
+const addTextBox = document.querySelector('.add-text');
+
+addNoteButtonInBox.addEventListener('click', addNoteEvent = () => {
+    
+    const mainForNoteBox = document.querySelector('main');
+    const mainNoteBox = document.createElement('div');
+    const mainHeaderForNoteBox = document.createElement('header');
+    const headerForNoteBoxHeader = document.createElement('div');
+    const deleteButtonForNoteBox = document.createElement('i');
+    const textForNoteBox = document.createElement('div');
+
+    mainForNoteBox.appendChild(mainNoteBox);
+    mainNoteBox.classList.add('note-box');
+    mainNoteBox.appendChild(mainHeaderForNoteBox);
+    mainHeaderForNoteBox.classList.add('note-box-main-header');
+    mainHeaderForNoteBox.appendChild(headerForNoteBoxHeader);
+    headerForNoteBoxHeader.classList.add('note-box-header');
+    headerForNoteBoxHeader.textContent = addTitleBox.value;
+    mainHeaderForNoteBox.appendChild(deleteButtonForNoteBox);
+    deleteButtonForNoteBox.classList.add('fas', 'fa-trash-alt');
+    mainNoteBox.appendChild(textForNoteBox);
+    textForNoteBox.classList.add('note-box-text')
+    textForNoteBox.innerHTML = addTextBox.value;
+    addTitleBox.value = '';
+    addTextBox.value = '';
+        
+    var emptyValue = 0;
+
+    if(headerForNoteBoxHeader.textContent.length == emptyValue) {
+    
+        headerForNoteBoxHeader.textContent = 'No title.';
+    }
+
+    if(textForNoteBox.innerHTML.length == emptyValue) {
+   
+        textForNoteBox.innerHTML = '-';
+    }
+
+    deleteButtonForNoteBox.addEventListener('click', deleteNoteEvent = () => {
+
+        mainForNoteBox.removeChild(mainNoteBox);
+    });
+});
+    </script>
+</body>
+</html>

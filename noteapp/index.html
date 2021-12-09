@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+
+    <header class="first-header">
+        <h1>Note App</h1>
+        <input type="button" value="Add Note" class="add-note-button">
+        <h4 class="alert">You shouldn't leave the title and text section blank.</h4>
+    </header>
+    <div class="button-event-box">
+        <header>
+            <h3>Add a note..</h3>
+            <div class="close-box">X</div>
+        </header>
+        <textarea class="add-title" placeholder="Add title.." maxlength="16"></textarea>
+        <textarea class="add-text" placeholder="Add text" maxlength="130"></textarea>
+        <input type="button" value="Add Note" class="add-note-button-box">
+    </div>
+    <main>
+        <!-- <div class="note-box">
+            <header class="note-box-main-header">
+                <div class="note-box-header">Title</div>
+                <i class="fas fa-trash-alt"></i>
+            </header>
+            <div class="note-box-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium tempora libero sapiente deserunt perspiciatis ex, eaque illo consequuntur, dolore cupidita</div>
+        </div> this area -->
+    </main>
+    
+    <script src="app.js"></script>
+</body>
+</html>

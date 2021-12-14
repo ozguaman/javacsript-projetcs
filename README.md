@@ -20,7 +20,13 @@
 ## Projects 
 
 <ul>
-  <li>To-do List</li>
-  <li>Notes App</li>
-  <li>Music Player</li>
+  <li>
+    <a href="https://github.com/claffen/javacsript-projetcs/tree/main/todo">To-do List</a>
+  </li>
+  <li>
+    <a href="https://github.com/claffen/javacsript-projetcs/tree/main/noteapp">Notes App</a>
+  </li>
+  <li>
+    <a href="https://github.com/claffen/javacsript-projetcs/tree/main/music-app-ui">Simple Music App</a>
+  </li>
 </ul>

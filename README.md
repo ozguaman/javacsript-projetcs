@@ -30,7 +30,7 @@
     <a href="https://github.com/claffen/javacsript-projetcs/tree/main/music-app-ui">Simple Music App</a>
   </li>
   <li>
-    <a href="https://github.com/claffen/javacsript-projetcs/tree/main/popup">Simple Popup</a>
+    <a href="https://github.com/claffen/javacsript-projetcs/tree/main/popup">Popup</a>
   </li>
   
 </ul>
